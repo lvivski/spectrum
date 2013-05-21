@@ -13,12 +13,12 @@ var ul = document.createElement('ul')
 
 !['normal'
 , 'protanopia'
-, 'deuteranopia'
-, 'tritanopia'
-, 'achromatopsia'
 , 'protanomaly'
+, 'deuteranopia'
 , 'deuteranomaly'
+, 'tritanopia'
 , 'tritanomaly'
+, 'achromatopsia'
 , 'achromatomaly'
 ].forEach(function (el) {
   var li = document.createElement('li')
@@ -26,7 +26,7 @@ var ul = document.createElement('ul')
   li.textContent = el[0].toUpperCase() + el.slice(1)
   li.addEventListener('click', handler, false)
   el == current && li.classList.add('current')
-  ul.appendChild(li);
+  ul.appendChild(li)
 })
 
 document.body.appendChild(ul)
