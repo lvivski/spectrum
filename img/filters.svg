@@ -1,5 +1,9 @@
-<!-- base on: http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html -->
-<!-- we have to fix gamma for matrices -->
+<!-- 
+FYI http://en.wikipedia.org/wiki/Color_blindness
+v0 matrices' values were from http://www.nofunc.com/Color_Matrix_Library/
+v1 is based on http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html
+but we have to fix gamma
+-->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 	<defs>
 		<filter id="normal">
@@ -30,7 +34,7 @@
 				<feFuncG type="gamma" amplitude="1" exponent=".9" offset="0" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="deuteranopia">
+		<filter id="deuteranopia" color-interpolation-filters="sRGB">
 			<feColorMatrix values="0.367322 0.860646 -0.227968 0 0
 				0.280085 0.672501 0.047413 0 0
 				-0.011820 0.042940 0.968881 0 0
@@ -41,7 +45,7 @@
 				<feFuncG type="gamma" amplitude="1" exponent=".9" offset="0" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="deuteranomaly">
+		<filter id="deuteranomaly" color-interpolation-filters="sRGB">
 			<feColorMatrix values="0.547494 0.607765 -0.155259 0 0
 				0.181692 0.781742 0.036566 0 0
 				-0.010410 0.027275 0.983136 0 0
@@ -52,7 +56,7 @@
 				<feFuncG type="gamma" amplitude="1" exponent=".9" offset="0" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="tritanopia">
+		<filter id="tritanopia" color-interpolation-filters="sRGB">
 			<feColorMatrix values="1.255528 -0.076749 -0.178779 0 0
 				-0.078411 0.930809 0.147602 0 0
 				0.004733 0.691367 0.303900 0 0
@@ -63,7 +67,7 @@
 				<feFuncG type="gamma" amplitude="1" exponent=".9" offset="0" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="tritanomaly">
+		<filter id="tritanomaly" color-interpolation-filters="sRGB">
 			<feColorMatrix values="1.017277 0.027029 -0.044306 0 0
 				-0.006113 0.958479 0.047634 0 0
 				0.006379 0.248708 0.744913 0 0

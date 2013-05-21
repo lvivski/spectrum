@@ -9,18 +9,27 @@
 
 	"browser_action": {
 		"default_title": "Color Blind",
-		"default_popup": "popup.html"
+		"default_popup": "popup.html",
+		"default_icon": {
+			"19": "img/19.png",
+			"38": "img/38.png"
+		}
+	},
+	
+	"icons": {
+		"128": "img/128.png",
+		"48": "img/48.png"
 	},
 	
 	"web_accessible_resources": [
-		"filters.svg"
+		"img/filters.svg"
 	],
 	
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
 			"css": [],
-			"js": ["filters.js"]
+			"js": ["js/filters.js"]
 		}
 	],
 
