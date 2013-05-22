@@ -41,7 +41,7 @@ function handler(e) {
     li.classList.remove('current')
   })
   this.classList.add('current')
-  chrome.tabs.insertCSS(null, { code: 'html {-webkit-filter: url(#' + current + ');' })
+  chrome.tabs.insertCSS(null, { code: 'html { -webkit-filter: url(#' + current + '); }' })
 }
 
 

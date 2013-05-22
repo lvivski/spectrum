@@ -4,6 +4,14 @@ FYI http://en.wikipedia.org/wiki/Color_blindness
 v0 matrices' values were from http://www.nofunc.com/Color_Matrix_Library/
 v1 is based on http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html
 but we have to fix gamma
+
+further reading:
+http://vision.psychol.cam.ac.uk/jdmollon/papers/Dichromatsimulation.pdf
+http://vision.psychol.cam.ac.uk/jdmollon/papers/colourmaps.pdf
+http://scien.stanford.edu/class/psych221/projects/05/ofidaner/project_report.pdf
+http://scien.stanford.edu/pages/labsite/2005/psych221/projects/05/ofidaner/conv_img.m
+
+Note: use `web.archive.org` for old links
 -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
 	<defs>
