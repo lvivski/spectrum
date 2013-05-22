@@ -1,11 +1,11 @@
 {
 	"manifest_version": 2,
 
-	"name": "Color Blind",
+	"name": "Color Vision",
 	"description": "Test the page",
-	"version": "0.1",
+	"version": "0.1.0",
 	
-	"homepage_url": "http://healthignition.com",
+	"homepage_url": "http://lvivski.com/colorvision",
 
 	"browser_action": {
 		"default_title": "Color Blind",

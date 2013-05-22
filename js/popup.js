@@ -10,17 +10,19 @@ $.all = function (selector, context) {
 
 var ul = document.createElement('ul')
   , current = 'normal'
+  , vision = {
+    normal: '',
+    protanopia: '1%',
+    protanomaly: '1%',
+    deuteranopia: '1%',
+    deuteranomaly: '6%',
+    tritanopia: '0.1%',
+    tritanomaly: '0.01%',
+    achromatopsia: '0.00001%',
+    achromatomaly: '0.00001%'
+  }
 
-!['normal'
-, 'protanopia'
-, 'protanomaly'
-, 'deuteranopia'
-, 'deuteranomaly'
-, 'tritanopia'
-, 'tritanomaly'
-, 'achromatopsia'
-, 'achromatomaly'
-].forEach(function (el) {
+Object.keys(vision).forEach(function (el) {
   var li = document.createElement('li')
   li.dataset['type'] = el
   li.textContent = el[0].toUpperCase() + el.slice(1)
