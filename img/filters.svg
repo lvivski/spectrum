@@ -107,7 +107,7 @@ Note: use `web.archive.org` for old links
 				<feFuncB type="gamma" exponent=".9"/>
 			</feComponentTransfer>
 		</filter>
-		<filter id="contrast" color-interpolation-filters="sRGB">
+		<filter id="low-contrast" color-interpolation-filters="sRGB">
 			<feComponentTransfer>
 				<!-- slope = [amount] intercept = (1 - [amount] / 2) -->
 				<feFuncR type="linear" slope=".5" intercept=".25"/>

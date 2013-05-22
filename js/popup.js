@@ -20,14 +20,14 @@ var ul = document.createElement('ul')
     tritanomaly: '0.01%',
     achromatopsia: '0.00001%',
     achromatomaly: '0.00001%',
-    contrast: '',
+    'low-contrast': '',
     blur: ''
   }
 
 Object.keys(vision).forEach(function (el) {
   var li = document.createElement('li')
   li.dataset['type'] = el
-  li.textContent = el[0].toUpperCase() + el.slice(1)
+  li.textContent = el
   li.addEventListener('click', handler, false)
   el == current && li.classList.add('current')
   ul.appendChild(li)
