@@ -78,10 +78,10 @@ but we have to fix gamma
 				<feFuncG type="gamma" amplitude="1" exponent=".9" offset="0" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="achromatopsia">
-			<feColorMatrix values="0.299 0.587 0.114 0 0
-				0.299 0.587 0.114 0 0
-				0.299 0.587 0.114 0 0
+		<filter id="achromatopsia" color-interpolation-filters="sRGB">
+			<feColorMatrix values="0.212656 0.715158 0.072186 0 0
+				0.212656 0.715158 0.072186 0 0
+				0.212656 0.715158 0.072186 0 0
 				0 0 0 1 0" />
 		</filter>
 		<filter id="achromatomaly">
