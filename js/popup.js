@@ -19,7 +19,9 @@ var ul = document.createElement('ul')
     tritanopia: '0.1%',
     tritanomaly: '0.01%',
     achromatopsia: '0.00001%',
-    achromatomaly: '0.00001%'
+    achromatomaly: '0.00001%',
+    contrast: '',
+    blur: ''
   }
 
 Object.keys(vision).forEach(function (el) {
@@ -39,7 +41,7 @@ function handler(e) {
     li.classList.remove('current')
   })
   this.classList.add('current')
-  chrome.tabs.insertCSS(null, { code: 'body {-webkit-filter: url(#' + current + ');' })
+  chrome.tabs.insertCSS(null, { code: 'html {-webkit-filter: url(#' + current + ');' })
 }
 
 
