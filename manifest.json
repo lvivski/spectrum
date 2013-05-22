@@ -11,14 +11,14 @@
 		"default_title": "Color Vision",
 		"default_popup": "popup.html",
 		"default_icon": {
-			"19": "img/19.png",
-			"38": "img/38.png"
+			"19": "img/action_small.png",
+			"38": "img/action.png"
 		}
 	},
 	
 	"icons": {
-		"128": "img/128.png",
-		"48": "img/48.png"
+		"128": "img/icon.png",
+		"48": "img/icon_small.png"
 	},
 	
 	"web_accessible_resources": [
