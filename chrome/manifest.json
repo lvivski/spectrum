@@ -1,14 +1,14 @@
 {
 	"manifest_version": 2,
 
-	"name": "Color Vision",
+	"name": "Spectrum",
 	"description": "Instantly test your web page with different types of color vision deficiency.",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	
-	"homepage_url": "http://lvivski.com/colorvision",
+	"homepage_url": "http://lvivski.com/spectrum",
 
 	"browser_action": {
-		"default_title": "Color Vision",
+		"default_title": "Spectrum",
 		"default_popup": "popup.html",
 		"default_icon": {
 			"19": "img/action_small.png",

@@ -20,8 +20,7 @@ var ul = document.createElement('ul')
     tritanomaly: '0.01%',
     achromatopsia: '0.00001%',
     achromatomaly: '0.00001%',
-    'low-contrast': '',
-    blur: ''
+    'low-contrast': ''
   }
 
 Object.keys(vision).forEach(function (el) {
