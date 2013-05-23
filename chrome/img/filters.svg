@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 <!-- 
 FYI http://en.wikipedia.org/wiki/Color_blindness
-v0 matrices' values were from http://www.nofunc.com/Color_Matrix_Library/
-v1 is based on http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html
-but we have to fix gamma
 
 further reading:
+http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html
+http://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_PCA/CVD_PCA.html
+
+
 http://vision.psychol.cam.ac.uk/jdmollon/papers/Dichromatsimulation.pdf
 http://vision.psychol.cam.ac.uk/jdmollon/papers/colourmaps.pdf
+
 http://scien.stanford.edu/class/psych221/projects/05/ofidaner/project_report.pdf
 http://scien.stanford.edu/pages/labsite/2005/psych221/projects/05/ofidaner/conv_img.m
 
