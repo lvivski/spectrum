@@ -8,20 +8,20 @@ $.all = function (selector, context) {
   )
 }
 
-var ul = document.createElement('ul')
-  , current = 'normal'
-  , vision = {
-    normal: '',
-    protanopia: '1%',
-    protanomaly: '1%',
-    deuteranopia: '1%',
-    deuteranomaly: '6%',
-    tritanopia: '0.1%',
-    tritanomaly: '0.01%',
-    achromatopsia: '0.00001%',
-    achromatomaly: '0.00001%',
-    'low-contrast': ''
-  }
+var ul = document.createElement('ul'),
+    current = 'normal',
+    vision = {
+      normal: '',
+      protanopia: '1%',
+      protanomaly: '1%',
+      deuteranopia: '1%',
+      deuteranomaly: '6%',
+      tritanopia: '0.1%',
+      tritanomaly: '0.01%',
+      achromatopsia: '0.00001%',
+      achromatomaly: '0.00001%',
+      'low-contrast': ''
+    }
 
 Object.keys(vision).forEach(function (el) {
   var li = document.createElement('li')
@@ -42,5 +42,3 @@ function handler(e) {
   this.classList.add('current')
   chrome.tabs.insertCSS(null, { code: 'html { -webkit-filter: url(#' + current + '); }' })
 }
-
-
