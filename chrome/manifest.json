@@ -3,7 +3,7 @@
 
 	"name": "Spectrum",
 	"description": "Instantly test your web page with different types of color vision deficiency.",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	
 	"homepage_url": "http://lvivski.com/spectrum",
 
@@ -36,6 +36,7 @@
 	"permissions": [
 		"tabs",
 		"http://*/*",
-		"https://*/*"
+		"https://*/*",
+		"file://*/*"
 	]
 }
