@@ -19,10 +19,10 @@ const vision = {
 }
 Object.keys(vision).forEach((type) => {
 	const li = document.createElement('li')
-  li.dataset.type = type
-  li.textContent = type
+	li.dataset.type = type
+	li.textContent = type
 	li.addEventListener('click', handler, false)
-  ul.appendChild(li)
+	ul.appendChild(li)
 })
 
 chrome.tabs.query({ active:true, currentWindow:true }, (tabs) => {
@@ -47,7 +47,7 @@ function update(type) {
 function handler(e) {
 	const filter = this.dataset.type
 	update(filter)
-  chrome.tabs.query({ active:true, currentWindow:true }, (tabs) => {
+	chrome.tabs.query({ active:true, currentWindow:true }, (tabs) => {
 		const tab = tabs[0].id;
 		chrome.tabs.sendMessage(tab, { type: 'applyFilter', filter: filter }, () => {
 			chrome.tabs.insertCSS(tab, { code: `body { -webkit-filter: url(#${filter}); }` })
