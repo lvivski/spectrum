@@ -34,7 +34,15 @@ Object.keys(vision).forEach(function (el) {
 
 document.body.appendChild(ul)
 
+var filterLoaded = false;
 function handler(e) {
+  if (!filterLoaded){
+    chrome.tabs.query({active:true,currentWindow:true},function(tabs){
+      chrome.tabs.sendMessage(tabs[0].id, {method:"load"}, function(response){
+        filterLoaded = response;
+      });
+    });
+  }
   current = this.dataset['type']
   $.all('li').forEach(function(li) {
     li.classList.remove('current')
