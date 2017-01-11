@@ -3,8 +3,8 @@
 
 	"name": "Spectrum",
 	"description": "Instantly test your web page with different types of color vision deficiency.",
-	"version": "0.1.4",
-	
+	"version": "0.1.6",
+
 	"homepage_url": "http://lvivski.com/spectrum",
 
 	"browser_action": {
@@ -15,16 +15,16 @@
 			"38": "img/action.png"
 		}
 	},
-	
+
 	"icons": {
 		"128": "img/icon.png",
 		"48": "img/icon_small.png"
 	},
-	
+
 	"web_accessible_resources": [
 		"img/filters.svg"
 	],
-	
+
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
