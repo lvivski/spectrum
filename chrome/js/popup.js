@@ -1,12 +1,8 @@
-function $(selector, context) {
-  return (context || document).querySelector(selector)
-}
+const $ = (selector, context) => (context || document).querySelector(selector)
 
-$.all = function (selector, context) {
-  return Array.prototype.slice.call(
-    (context || document).querySelectorAll(selector)
-  )
-}
+$.all = (selector, context) => Array.prototype.slice.call(
+	(context || document).querySelectorAll(selector)
+)
 
 const ul = document.createElement('ul')
 const vision = {
@@ -29,10 +25,10 @@ Object.keys(vision).forEach((type) => {
   ul.appendChild(li)
 })
 
-update('normal')
 chrome.tabs.query({ active:true, currentWindow:true }, (tabs) => {
-	chrome.tabs.sendMessage(tabs[0].id, { type: 'getFilter' }, (response) => {
-		update(response || 'normal')
+	const tab = tabs[0].id;
+	chrome.tabs.sendMessage(tab, { type: 'restoreFilter' }, (filter) => {
+		update(filter)
 	})
 })
 
@@ -49,12 +45,12 @@ function update(type) {
 }
 
 function handler(e) {
-	const type = this.dataset.type
-	update(type)
+	const filter = this.dataset.type
+	update(filter)
   chrome.tabs.query({ active:true, currentWindow:true }, (tabs) => {
 		const tab = tabs[0].id;
-		chrome.tabs.sendMessage(tab, { type: 'applyFilter', filter: type }, (message) => {
-			chrome.tabs.insertCSS(tab, { code: `html { -webkit-filter: url(#${type}); }` })
+		chrome.tabs.sendMessage(tab, { type: 'applyFilter', filter: filter }, () => {
+			chrome.tabs.insertCSS(tab, { code: `body { -webkit-filter: url(#${filter}); }` })
 		})
 	})
 }
