@@ -85,7 +85,7 @@ Note: use `web.archive.org` for old links
 			</feComponentTransfer>
 		</filter>
 		<filter id="blurred-vision">
-			<feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+			<feGaussianBlur stdDeviation="3 2" />
 		</filter>
 	</defs>
 </svg>
