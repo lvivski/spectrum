@@ -1,34 +1,38 @@
 body {
-	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-	font-size: .9em;
-	margin: 0;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  margin: 0;
 }
 ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-	cursor: pointer;
-	padding: .2em 1em .2em 1.5em;
-	text-transform: capitalize;
+  cursor: pointer;
+  padding: 0.2em 1em 0.2em 1.5em;
+  text-transform: capitalize;
 }
 
 .current:before {
-	content: '';
-	width: .55em;
-	height: .25em;
-	border-style: solid;
-	border-width: 0 0 .2em .2em;
-	position: absolute;
-	margin-left: -1.1em;
-	-webkit-transform: rotate(-50deg) skew(-8deg, -8deg);
-	margin-top: .3em;
+  content: "";
+  width: 0.55em;
+  height: 0.25em;
+  border-style: solid;
+  border-width: 0 0 0.2em 0.2em;
+  position: absolute;
+  margin-left: -1.1em;
+  transform: rotate(-50deg) skew(-8deg, -8deg);
+  margin-top: 0.3em;
 }
 
 li:hover {
-	color: white;
-	background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 25%, rgba(255,255,255,0)),
-		rgb(19, 85, 253);
+  color: white;
+  background: linear-gradient(
+      top,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0)
+    ),
+    rgb(19, 85, 253);
 }

@@ -1,42 +1,40 @@
 {
-	"manifest_version": 2,
+  "manifest_version": 3,
 
-	"name": "Spectrum",
-	"description": "Instantly test your web page with different types of color vision deficiency.",
-	"version": "0.2.0",
+  "name": "Spectrum",
+  "description": "Instantly test your web page with different types of color vision deficiency.",
+  "version": "0.3.0",
 
-	"homepage_url": "http://lvivski.com/spectrum",
+  "homepage_url": "http://lvivski.com/spectrum",
 
-	"browser_action": {
-		"default_title": "Spectrum",
-		"default_popup": "popup.html",
-		"default_icon": {
-			"19": "img/action_small.png",
-			"38": "img/action.png"
-		}
-	},
+  "action": {
+    "default_title": "Spectrum",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "19": "img/action_small.png",
+      "38": "img/action.png"
+    }
+  },
 
-	"icons": {
-		"128": "img/icon.png",
-		"48": "img/icon_small.png"
-	},
+  "icons": {
+    "128": "img/icon.png",
+    "48": "img/icon_small.png"
+  },
 
-	"web_accessible_resources": [
-		"img/filters.svg"
-	],
+  "web_accessible_resources": [
+    {
+      "resources": ["img/filters.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
 
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"css": [],
-			"js": ["js/filters.js"]
-		}
-	],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [],
+      "js": ["js/filters.js"]
+    }
+  ],
 
-	"permissions": [
-		"tabs",
-		"http://*/*",
-		"https://*/*",
-		"file://*/*"
-	]
+  "permissions": ["tabs", "activeTab", "scripting"]
 }

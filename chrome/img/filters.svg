@@ -21,100 +21,67 @@ Note: use `web.archive.org` for old links
 			<feColorMatrix values="1 0 0 0 0
 				0 1 0 0 0
 				0 0 1 0 0
-				0 0 0 1 0"/>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="protanopia">
-			<feColorMatrix values="0.152286 1.052583 -0.204868 0 0
+			<feColorMatrix
+				values="0.152286 1.052583 -0.204868 0 0
 				0.114503 0.786281 0.099216 0 0
 				-0.003882 -0.048116 1.051998 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="protanomaly">
-			<feColorMatrix values="0.458064 0.679578 -0.137642 0 0
+			<feColorMatrix
+				values="0.458064 0.679578 -0.137642 0 0
 				0.092785 0.846313 0.060902 0 0
 				-0.007494 -0.016807 1.024301 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="deuteranopia">
-			<feColorMatrix values="0.367322 0.860646 -0.227968 0 0
+			<feColorMatrix
+				values="0.367322 0.860646 -0.227968 0 0
 				0.280085 0.672501 0.047413 0 0
 				-0.011820 0.042940 0.968881 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="deuteranomaly">
-			<feColorMatrix values="0.547494 0.607765 -0.155259 0 0
+			<feColorMatrix
+				values="0.547494 0.607765 -0.155259 0 0
 				0.181692 0.781742 0.036566 0 0
 				-0.010410 0.027275 0.983136 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="tritanopia">
-			<feColorMatrix values="1.255528 -0.076749 -0.178779 0 0
+			<feColorMatrix
+				values="1.255528 -0.076749 -0.178779 0 0
 				-0.078411 0.930809 0.147602 0 0
 				0.004733 0.691367 0.303900 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="tritanomaly">
-			<feColorMatrix values="1.017277 0.027029 -0.044306 0 0
+			<feColorMatrix
+				values="1.017277 0.027029 -0.044306 0 0
 				-0.006113 0.958479 0.047634 0 0
 				0.006379 0.248708 0.744913 0 0
-				0 0 0 1 0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
 		</filter>
 		<filter id="achromatopsia">
-			<feColorMatrix values="0.212656 0.715158 0.072186 0 0
+			<feColorMatrix
+				values="0.212656 0.715158 0.072186 0 0
 				0.212656 0.715158 0.072186 0 0
 				0.212656 0.715158 0.072186 0 0
-				0 0 0 1 0"/>
-			<feColorMatrix type="saturate" values="0"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+				0 0 0 1 0" />
+			<feColorMatrix type="saturate" values="0" />
 		</filter>
 		<filter id="achromatomaly">
-			<feColorMatrix type="saturate" values="0.5"/>
-			<feComponentTransfer>
-				<feFuncB type="gamma" exponent=".45"/>
-				<feFuncR type="gamma" exponent=".45"/>
-				<feFuncG type="gamma" exponent=".45"/>
-			</feComponentTransfer>
+			<feColorMatrix type="saturate" values="0.5" />
 		</filter>
 		<filter id="low-contrast">
 			<feComponentTransfer>
 				<!-- slope = [amount] intercept = (1 - [amount] / 2) -->
-				<feFuncR type="linear" slope=".5" intercept=".25"/>
-				<feFuncG type="linear" slope=".5" intercept=".25"/>
-				<feFuncB type="linear" slope=".5" intercept=".25"/>
+				<feFuncR type="linear" slope=".5" intercept=".25" />
+				<feFuncG type="linear" slope=".5" intercept=".25" />
+				<feFuncB type="linear" slope=".5" intercept=".25" />
 			</feComponentTransfer>
 		</filter>
 	</defs>
