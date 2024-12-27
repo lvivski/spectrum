@@ -15,12 +15,13 @@ const vision = {
   achromatopsia: "0.00001%",
   achromatomaly: "0.00001%",
   "low-contrast": "",
+  "blurred-vision": "",
 };
 
 Object.keys(vision).forEach((type) => {
   const li = document.createElement("li");
   li.dataset.type = type;
-  li.textContent = type;
+  li.textContent = type.replace(/-/g, " ");
   li.addEventListener("click", handler, false);
   ul.appendChild(li);
 });
@@ -52,7 +53,7 @@ function handler(e) {
     chrome.tabs.sendMessage(tabId, { type: "applyFilter", filter }, () => {
       chrome.scripting.insertCSS({
         target: { tabId },
-        css: `body { filter: url(#${filter}); }`,
+        css: `:root { filter: url(#${filter}); }`,
       });
     });
   });
