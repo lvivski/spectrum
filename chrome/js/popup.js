@@ -16,6 +16,7 @@ const vision = {
   achromatomaly: "0.00001%",
   "low-contrast": "",
 };
+
 Object.keys(vision).forEach((type) => {
   const li = document.createElement("li");
   li.dataset.type = type;
@@ -24,21 +25,14 @@ Object.keys(vision).forEach((type) => {
   ul.appendChild(li);
 });
 
+document.body.appendChild(ul);
+
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   const tabId = tabs[0].id;
-  chrome.scripting.executeScript(
-    {
-      target: { tabId },
-      function: restoreFilter,
-    },
-    (results) => {
-      const filter = results[0].result;
-      update(filter);
-    }
-  );
+  chrome.tabs.sendMessage(tabId, { type: "restoreFilter" }, (filter) => {
+    update(filter);
+  });
 });
-
-document.body.appendChild(ul);
 
 function update(type) {
   $.all("li").forEach((li) => {
@@ -47,14 +41,6 @@ function update(type) {
     } else {
       li.classList.remove("current");
     }
-  });
-}
-
-function restoreFilter() {
-  return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: "restoreFilter" }, (response) => {
-      resolve(response.filter);
-    });
   });
 }
 

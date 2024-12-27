@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (filter !== "normal" && svg.parentNode !== document.body) {
       document.body.appendChild(svg);
     } else if (filter === "normal") {
-      svg.parentNode.removeChild(svg);
+      svg.parentNode?.removeChild(svg);
     }
   }
   sendResponse(filter);
