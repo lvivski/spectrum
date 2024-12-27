@@ -15,7 +15,7 @@ const vision = {
   achromatopsia: "0.00001%",
   achromatomaly: "0.00001%",
   "low-contrast": "",
-  "blurred-vision": "",
+  blurred: "",
 };
 
 Object.keys(vision).forEach((type) => {

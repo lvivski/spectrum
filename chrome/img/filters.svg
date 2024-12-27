@@ -84,7 +84,7 @@ Note: use `web.archive.org` for old links
 				<feFuncB type="linear" slope=".5" intercept=".25" />
 			</feComponentTransfer>
 		</filter>
-		<filter id="blurred-vision">
+		<filter id="blurred">
 			<feGaussianBlur stdDeviation="3 2" />
 		</filter>
 	</defs>
