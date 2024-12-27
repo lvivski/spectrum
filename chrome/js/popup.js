@@ -1,6 +1,5 @@
 const $ = (selector, context) => (context || document).querySelector(selector);
-
-$.all = (selector, context) =>
+const $$ = (selector, context) =>
   Array.prototype.slice.call((context || document).querySelectorAll(selector));
 
 const filters = {
@@ -86,8 +85,7 @@ Object.keys(filters).forEach((type) => {
 });
 document.body.appendChild(ul);
 
-chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  const tabId = tabs[0].id;
+chrome.tabs.query({ active: true, currentWindow: true }, ([{ id: tabId }]) => {
   chrome.scripting.executeScript(
     {
       target: { tabId },
@@ -101,7 +99,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 });
 
 function update(type) {
-  $.all("li").forEach((li) => {
+  $$("li").forEach((li) => {
     if (li.dataset.type === type) {
       li.classList.add("current");
     } else {
@@ -113,22 +111,26 @@ function update(type) {
 function handler(e) {
   const filter = this.dataset.type;
   update(filter);
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const tabId = tabs[0].id;
-    chrome.scripting.executeScript({
-      target: { tabId },
-      func: (filter) => {
-        sessionStorage.setItem("spectrumFilter", filter);
-      },
-      args: [filter],
-    });
-    chrome.scripting.insertCSS({
-      target: { tabId },
-      css: `:root {
-        filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg">${filters[
-          filter
-        ].replace(/\n\s+/g, " ")}</svg>#${filter}');
-    }`,
-    });
-  });
+  chrome.tabs.query(
+    { active: true, currentWindow: true },
+    ([{ id: tabId }]) => {
+      chrome.scripting.executeScript({
+        target: { tabId },
+        func: (filter) => {
+          sessionStorage.setItem("spectrumFilter", filter);
+        },
+        args: [filter],
+      });
+      chrome.scripting.insertCSS({
+        target: { tabId },
+        css: `:root { filter: url('${createDataURI(filter)}') }`,
+      });
+    }
+  );
+}
+
+function createDataURI(filter) {
+  return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg">${filters[
+    filter
+  ].replace(/\n\s+/g, " ")}</svg>#${filter}`;
 }
