@@ -51,9 +51,13 @@ function handler(e) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tabId = tabs[0].id;
     chrome.tabs.sendMessage(tabId, { type: "applyFilter", filter }, () => {
+      let filterString = `url(#${filter})`;
+      if (filter !== "normal" && !filter.includes("-")) {
+        filterString = `url(#gamma-before) ${filterString} url(#gamma-after)`;
+      }
       chrome.scripting.insertCSS({
         target: { tabId },
-        css: `:root { filter: url(#${filter}); }`,
+        css: `:root { filter: ${filterString}; }`,
       });
     });
   });

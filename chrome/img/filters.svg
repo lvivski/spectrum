@@ -23,6 +23,20 @@ Note: use `web.archive.org` for old links
 				0 0 1 0 0
 				0 0 0 1 0" />
 		</filter>
+		<filter id="gamma-before">
+			<feComponentTransfer>
+				<feFuncR type="gamma" exponent="2.2" />
+				<feFuncG type="gamma" exponent="2.2" />
+				<feFuncB type="gamma" exponent="2.2" />
+			</feComponentTransfer>
+		</filter>
+		<filter id="gamma-after">
+			<feComponentTransfer>
+				<feFuncR type="gamma" exponent="0.4545" />
+				<feFuncG type="gamma" exponent="0.4545" />
+				<feFuncB type="gamma" exponent="0.4545" />
+			</feComponentTransfer>
+		</filter>
 		<filter id="protanopia">
 			<feColorMatrix
 				values="0.152286 1.052583 -0.204868 0 0
