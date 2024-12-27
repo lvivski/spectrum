@@ -30,7 +30,7 @@ li {
 li:hover {
   color: white;
   background: linear-gradient(
-      top,
+      to bottom,
       rgba(255, 255, 255, 0.3) 25%,
       rgba(255, 255, 255, 0)
     ),

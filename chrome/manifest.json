@@ -36,5 +36,5 @@
     }
   ],
 
-  "permissions": ["tabs", "activeTab", "scripting"]
+  "permissions": ["activeTab", "scripting"]
 }

@@ -1,6 +1,6 @@
 let svg = null;
 const xhr = new XMLHttpRequest();
-xhr.open("GET", chrome.extension.getURL("img/filters.svg"));
+xhr.open("GET", chrome.runtime.getURL("img/filters.svg"));
 xhr.addEventListener("load", (e) => {
   svg = xhr.responseXML.documentElement;
   svg.style.display = "none";

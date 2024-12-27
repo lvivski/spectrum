@@ -28,7 +28,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   const tabId = tabs[0].id;
   chrome.scripting.executeScript(
     {
-      target: { tabId: tabId },
+      target: { tabId },
       function: restoreFilter,
     },
     (results) => {
@@ -43,9 +43,9 @@ document.body.appendChild(ul);
 function update(type) {
   $.all("li").forEach((li) => {
     if (li.dataset.type === type) {
-      li.classList.add("active");
+      li.classList.add("current");
     } else {
-      li.classList.remove("active");
+      li.classList.remove("current");
     }
   });
 }
@@ -62,15 +62,12 @@ function handler(e) {
   const filter = this.dataset.type;
   update(filter);
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const tab = tabs[0].id;
-    chrome.tabs.sendMessage(
-      tab,
-      { type: "applyFilter", filter: filter },
-      () => {
-        chrome.tabs.insertCSS(tab, {
-          code: `body { -webkit-filter: url(#${filter}); }`,
-        });
-      }
-    );
+    const tabId = tabs[0].id;
+    chrome.tabs.sendMessage(tabId, { type: "applyFilter", filter }, () => {
+      chrome.scripting.insertCSS({
+        target: { tabId },
+        css: `body { filter: url(#${filter}); }`,
+      });
+    });
   });
 }
