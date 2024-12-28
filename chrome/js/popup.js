@@ -1,6 +1,7 @@
-const $ = (selector, context) => (context || document).querySelector(selector);
-const $$ = (selector, context) =>
-  Array.prototype.slice.call((context || document).querySelectorAll(selector));
+const $ = (/** @type {string} */ selector, context = document) =>
+  context.querySelector(selector);
+const $$ = (/** @type {string} */ selector, context = document) =>
+  Array.from(context.querySelectorAll(selector));
 
 /*
 FYI http://en.wikipedia.org/wiki/Color_blindness
@@ -102,15 +103,14 @@ chrome.tabs.query({ active: true, currentWindow: true }, ([{ id: tabId }]) => {
       target: { tabId },
       func: () => sessionStorage.getItem("spectrumFilter"),
     },
-    (results) => {
-      const filter = results[0].result;
-      update(filter);
+    ([{ result }]) => {
+      update(result);
     }
   );
 });
 
-function update(type) {
-  $$("li").forEach((li) => {
+function update(/** @type {keyof filters} */ type) {
+  $$("li").forEach((/** @type {HTMLLIElement}*/ li) => {
     if (li.dataset.type === type) {
       li.classList.add("current");
     } else {
@@ -120,7 +120,7 @@ function update(type) {
 }
 
 function handler(e) {
-  const filter = this.dataset.type;
+  const filter = /** @type {keyof filters} */ (this.dataset.type);
   update(filter);
   chrome.tabs.query(
     { active: true, currentWindow: true },
@@ -140,7 +140,7 @@ function handler(e) {
   );
 }
 
-function createDataURI(filter) {
+function createDataURI(/** @type {keyof filters} */ filter) {
   return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg">${filters[
     filter
   ].replace(/\n\s+/g, " ")}</svg>#${filter}`;
